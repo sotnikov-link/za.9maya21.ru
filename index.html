@@ -48,7 +48,10 @@
 
     <script>
       setTimeout(() => {
-        var next = window.location.hash.split('#').splice(2).join('#');
+        var next = decodeURIComponent(window.location.hash)
+          .split('#')
+          .splice(2)
+          .join('#');
         window.location.replace(next || 'https://citlk.eiasmo.ru/');
       }, 500);
     </script>
